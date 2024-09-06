@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style1.css">
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style2.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous">
+    </script>
+    <script
+      src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+      integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+      crossorigin="anonymous">
+    </script>
+    <script src="js/script1.js"></script>
+    <title>Pallankuzhi</title>
+  </head>
+  <body>
+    <div id="wrapper" style="opacity:0.5">
+      <!-- <header>
+        <nav>
+          <div>
+            <h1>Pallankuzhi</h1>
+          </div>
+          <div>
+            <button id="instructions-button">How to Play</button>
+            <button id="start-over">Start Over</button>
+          </div>
+        </nav>
+      </header> -->
+
+
+      <div class="header" style="padding: 10px;">
+        <strong><p>DIGITAL PALLANKUZHI</p></strong>
+      </div>
+      <main>
+        <div id="player-2">Player 2</div>
+
+        <div id="board1">
+
+          <div id="col-2">
+            <div id="row-2">
+            </div>
+          </div>
+        </div>
+        </main>
+        <!-- <br> -->
+        <main>
+          <div id="board2">
+
+          <div id="col-2">
+            <div id="row-1">
+            </div>
+          </div>
+
+        </div>
+        <div id="player-1">Player 1</div>
+      </main>
+      <div class="footer" style="padding: 7px;">
+        <p>Created by Harikrishna, Kumaresan and Madhavan</p>
+      </div>
+      <div class="p1" style="float:left;z-index: :-1;">
+      <p id="p1pname">Player 1 </p><h3 id="p1point">0</h3>
+    </div>
+    <div class="p2" style="float:right;z-index: :-1;">
+      <p  id="p2pname">Player 2 </p><h3 id="p2point">0</h3>
+    </div>
+      <div class="navigation" style="margin-left: auto;margin-right: auto;">
+
+      <ul>
+        <li class="list" data-color="#3c40c6">
+          <a href="index.html">
+            <span class="icon"><i class="far fa-home"></i></span>
+            <span class="title">Home</span>
+          </a>
+        </li>
+        <li class="list active" data-color="#0fbcf9" id="playy">
+          <a href="#">
+            <span class="icon"><i class="fas fa-puzzle-piece"></i></span>
+            <span class="title">Play</span>
+          </a>
+        </li>
+        <li class="list" data-color="#05c46b" id="instructions-button" >
+          <a href="#">
+            <span class="icon"><i class="far fa-file-alt"></i></span>
+            <span class="title">Rules</span>
+          </a>
+        </li>
+        <li class="list" data-color="#ffa801" id="start-over">
+          <a href="#">
+            <span class="icon"><i class="fa fa-redo"></i></span>
+            <span class="title">Restart</span>
+          </a>
+        </li>
+        <li class="list" data-color="#dc143c" id="statistics">
+          <a href="#">
+            <span class="icon"><i class="fa fa-line-chart"></i></span>
+            <span class="title">Stats</span>
+          </a>
+        </li>
+        <div class="indicator"></div>
+      </ul>
+    </div>
+    </div>
+      <!-- <footer>
+        Created by Hk, Kumar, Maddy
+      </footer> -->
+    </div>
+    <div id="winning-modal">
+      <div id="winning-message">
+        <p><br>Would you like to play again?<br></p>
+        <div class="buttons">
+          <button class="button yes">&nbsp;&nbsp;Yes&nbsp;&nbsp;</button>
+          <button class="button no">&nbsp;&nbsp;No&nbsp;&nbsp;</button>
+        </div>
+      </div>
+    </div>
+    <div id="start-play">
+      <div id="start-playy">
+        <form name="myForm"> 
+          <!-- onsubmit="return validateForm()" -->
+        Player 1 Name&nbsp;&nbsp;<input name="name1"><br><br>
+        Player 2 Name&nbsp;&nbsp;<input name="name2"><br>
+          </form>
+        <div class="buttons">
+          <br>
+          <button class="button" id="y" onclick="namefunc()">&nbsp;&nbsp;Submit&nbsp;&nbsp;</button>
+          <button class="button" id="n">&nbsp;&nbsp;Cancel&nbsp;&nbsp;</button>
+        </div>
+      </div>
+    </div>
+    <div id="instructions-modal">
+      <div id="instructions">
+        <div id="close-button">
+          <button>&nbsp;&nbsp;X&nbsp;&nbsp;</button>
+        </div>
+        <div>
+          <h2><span>HOW TO PLAY</span></h2>
+          <br><p><span>NUMBER OF PLAYERS&nbsp;&nbsp;</span>2</p><br>
+          <p>
+            <span>ORIGIN</span><br>Pallankuzhi (பல்லாங்குழி), also Pallam Kuzhi, Pallangulli, Pallankuli or Pallanguzhi is one of the age-old South Indian Traditional Games played by Tamils in Southern India and Sri Lanka.
+          </p>
+          <p><br>Pal means in Tamil "many" and kuzhi means "pit" and could literally be translated as many pits, a fitting description of the mancala boards used to play mancala games.<br><br>
+          </p>
+          <p>
+            <span>
+BENEFITS</span><br>It’s an indoor game which helps us to do mind calculations,hand-eye coordination and also helps us to increase our concentration and patience.<br><br>The game is popular among children, women and older people.
+          </p><br>
+          <p>
+            <span>OBJECTIVE</span><br>The major objective of the Pallankuzhi game is to capture more stones than the opponent.
+          </p><br>
+          <img src="images/board_setup.png" height="30%" width="100%">
+          <p><span>RULES</span></p>
+          <ol>
+            <li>
+              The Pallankuzhi board has 14 holes, each player controlling one row of seven. 
+            </li>
+            <li>
+              Initially five seeds, shells or small stones are put in each hole.
+            </li>
+            <li>
+              On his turn a player lifts the seeds from any of his holes and, going counter-clockwise, distributes one seed into the following holes.
+            </li>
+            <li>
+              After a player has dropped his last seed, he takes the seeds from the next hole and distributes them.
+            </li>
+            <li>
+              If the last seed falls into a hole with an empty hole beyond, the seeds in the hole following the empty hole are captured by the player and placed into his store.
+            </li>
+            <li>
+              Play is continued if the next hole contains seeds. If the last seed falls into a cup, which is followed by two empty holes, nothing is captured and the turn is over.
+            </li>
+            <li>
+              If, after having a seed dropped into it, a hole contains four seeds, those are captured by the player whose side the hole is.
+            </li>
+            <li>
+              The next player continues play in the same way.
+            </li>
+            <li>
+              If a player has no seeds left to make a move, the round is over and his opponent captures the remaining seeds.
+            </li>
+            <li>
+              The winner will have maximum number of seeds which are kept in his store.
+            </li>
+          </ol>
+          <br><b><p>In this digitized version of game, a player is only allowed to choose the hole and the steps 3 to 7 are done automatically and the changes are not visible.<br>Final status of board after a player completes his turn will be displayed next.</p></b>
+
+        </div>
+      </div>
+    </div>
+    <div id="stats">
+      <div id="statss">
+        <div id="close-button1">
+          <button>&nbsp;&nbsp;X&nbsp;&nbsp;</button>
+        </div>
+        <div>
+          <h2><span>SCOREBOARD</span></h2><br>
+          <table id="myTable">
+            <tr>
+              <th>Player 1</th>
+              <th>Player 2</th>
+              <th>Result</th>
+            </tr>
+           <!--  <tr>
+              <td>Row1 cell1</td>
+              <td>Row1 cell2</td>
+              <td>Row1 cell3</td>
+            </tr> -->
+          </table>
+          <!-- <p><span>NUMBER OF PLAYERS&nbsp;&nbsp;</span>2</p><br> -->
+          <!-- <p id="statsss">
+          </p> -->
+        </div>
+      </div>
+    </div>
+    <script>
+      function namefunc(){
+            var p1name = document.forms["myForm"]["name1"].value;
+            var p2name = document.forms["myForm"]["name2"].value;
+            if(p1name=="")
+                p1name="Player 1";
+            if(p2name=="")
+                p2name="Player 2";
+            document.getElementById("player-1").innerHTML = p1name;
+            document.getElementById("player-2").innerHTML = p2name;
+            document.getElementById("p1pname").innerHTML = p1name;
+            document.getElementById("p2pname").innerHTML = p2name;
+      }
+      let list = document.querySelectorAll(".list");
+      for (let i = 0; i < list.length; i++) {
+        list[i].onmouseover = function () {
+          let j = 0;
+          while (j < list.length) {
+            list[j++].className = "list";
+          }
+          list[i].className = "list active";
+        };
+      }
+      list.forEach((elements) => {
+        elements.addEventListener("mouseenter", function (event) {
+          let bg = document.querySelector("body");
+          let color = event.target.getAttribute("data-color");
+          bg.style.backgroundColor = color;
+        });
+      });
+    </script>
+
+  </body>
+</html>

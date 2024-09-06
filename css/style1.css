@@ -1,0 +1,367 @@
+@font-face {
+  font-family: "Tex Gyre Adventor";
+  src: url("../tex-gyre-adventor/texgyreadventor-regular.otf");
+}
+
+@font-face {
+  font-family: "Tex Gyre Adventor Bold";
+  src: url("../tex-gyre-adventor/texgyreadventor-bold.otf");
+}
+
+#wrapper {
+  width: 1250px;
+  margin: 20px auto;
+
+  /*border: 1px solid #323232;*/
+  font-family: "Tex Gyre Adventor", sans-serif;
+}
+
+main {
+  display: flex;
+  top:40%;
+  padding-top: 25px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #323232;
+  color: white;
+  padding-left: 25px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+h1 {
+  font-size: 40px;
+  margin: 10px 20px 10px 0;
+  font-weight: normal;
+}
+
+button {
+  background-color: #323232;
+  color: white;
+  text-transform: uppercase;
+  margin: 0 20px;
+  cursor: pointer;
+  border: none;
+  font-size: 14px;
+}
+
+main > div {
+  width: 95%;
+  height: 175px;
+}
+
+#player-1, #player-2 {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 10px;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+#player-2 {
+  align-items: flex-start;
+  padding-top: 10px;
+}
+
+#board1, #board2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../images/board.jpg");
+  border-radius: 5px 5px 30px 30px;
+}
+#board1{
+  border-radius: 30px 30px 5px 5px;
+}
+#board1 > div {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#board2 > div {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#col-2 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#row-1, #row-2 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.hole-1, .hole-2 {
+  border-radius: 50%;
+  width: 115px;
+  height: 115px;
+  position: relative;
+  margin: 10px;
+  box-sizing: border-box;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/board.jpg");
+  padding: 15px;
+  z-index: 1;
+}
+
+
+.marble-layer {
+	width: 100%;
+	height: 100%;
+  display: flex;
+  padding: 15px;
+  box-sizing: border-box;
+  cursor: pointer;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  transition-delay:2s;
+}
+
+.marble {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: pink;
+  background: radial-gradient(#b400a2, #9e0031);
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
+  transition-delay:2s;
+}
+
+.hover-number {
+  z-index: 3;
+  visibility: hidden;
+  text-align:center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.mancala-number {
+  z-index: 4;
+  visibility: hidden;
+  text-align:center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.player-number {
+  position: absolute;
+  visibility: hidden;
+  animation-name: player-appear;
+  animation-duration: 4s;
+}
+
+@keyframes player-appear {
+  0% {visibility: visible;}
+  30% {transform: scale(2); opacity: 1;}
+  100% {opacity: 0;}
+}
+
+span {
+  font-family: "Tex Gyre Adventor Bold", sans-serif;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.footer {
+  z-index:5;
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #323232;
+   color: white;
+   text-align: center;
+}
+.header {
+  z-index:5;
+  letter-spacing: 3px;
+   position: fixed;
+   left: 0;
+   top: 0;
+   width: 100%;
+   background-color: #000000;
+   color: white;
+   text-align: center;
+}
+/*used same rules laid out here: https://raventools.com/blog/create-a-modal-dialog-using-css-and-javascript/*/
+#winning-modal {
+  visibility: hidden;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width:100%;
+  height:100%;
+  text-align:center;
+  z-index: 5000;
+}
+/*used same rules laid out here: https://raventools.com/blog/create-a-modal-dialog-using-css-and-javascript/*/
+#winning-message {
+  width:300px;
+  margin: 100px auto;
+  background-color: #fff;
+  border:1px solid #000;
+  padding:15px;
+  text-align:center;
+  font-family: "Tex Gyre Adventor", sans-serif;
+}
+
+
+#start-play {
+  visibility: visible;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width:100%;
+  height:100%;
+  text-align:center;
+  z-index: 5;
+}
+
+#start-playy {
+  width:500px;
+  margin: 2.5% auto;
+  border:1px solid #000;
+  padding:30px;
+  padding-left:50px;
+  background-color: #fff;
+  text-align:center;
+  font-family: "Tex Gyre Adventor", sans-serif;
+  letter-spacing: 1px;
+}
+
+#instructions-modal {
+  visibility: hidden;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width:100%;
+  height:100%;
+  text-align:center;
+  z-index: 5;
+}
+#instructions {
+  width:90%;
+  margin: 2.5% auto;
+  border:1px solid #000;
+  padding:30px;
+  padding-left:50px;
+  background-color: #fff;
+  text-align:left;
+  font-family: "Tex Gyre Adventor", sans-serif;
+  letter-spacing: 1px;
+}
+
+
+
+#stats {
+  visibility: hidden;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width:100%;
+  height:100%;
+  text-align:center;
+  z-index: 5;
+}
+#statss {
+  width:90%;
+  margin: 2.5% auto;
+  border:1px solid #000;
+  padding:30px;
+  padding-left:50px;
+  background-color: #fff;
+  text-align:center;
+  font-family: "Tex Gyre Adventor", sans-serif;
+  letter-spacing: 1px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+#close-button {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  align-items: center;
+}
+
+#close-button1 {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  align-items: center;
+}
+

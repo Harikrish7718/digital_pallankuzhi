@@ -1,0 +1,79 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+html, body {
+  height: 100%;
+  margin: 0;
+  position: relative;
+  background: #000000;
+  font-family: "Open Sans";
+}
+
+#wrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+#wrap p {
+  z-index: 5;
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  transform: translateX(-50%) translateY(-50%);
+  /*color: rgba(255,255,255,.5);*/
+  color:white;
+  font-size: 3.6603221083455346vw;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  text-align: center;
+}
+
+
+#wrap1 p {
+  position: absolute;
+  left: 50%;
+  top: 80%;
+  transform: translateX(-50%) translateY(-50%);
+  /*color: rgba(255,255,255,.5);*/
+  color:white;
+  font-size: 15px;
+  letter-spacing: 5px;
+  text-align: center;
+}
+  .button {
+    position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: #ff1a1a;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:hover {opacity: 1}
+
+
+.ball {
+  pointer-events: none;
+  position: absolute; 
+  width: 10px;
+  height: 10px;
+  border-radius: 50%; 
+  background: black;
+  animation: implode 1s ease-in-out;
+  animation-fill-mode: both;
+  opacity: .8;
+}
+
+@keyframes implode {
+  100% {transform: scale(0)}
+}
